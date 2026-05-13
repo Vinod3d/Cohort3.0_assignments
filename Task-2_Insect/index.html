@@ -10,6 +10,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -25,12 +26,8 @@
                 <a href="#" class="logo">Insect</a>
 
                 <div class="search-wrap">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8" />
-                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                    </svg>
-                    <input type="text" placeholder="Search…" aria-label="Search" />
+                    <i class="ri-search-line"></i>
+                    <input type="search" name="search" placeholder="Search…" aria-label="Search" />
                 </div>
 
                 <nav aria-label="Main navigation">
@@ -43,21 +40,9 @@
                     </ul>
                 </nav>
 
-                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" id="hamburger">
-                    <span></span><span></span><span></span>
-                </button>
+                <i class="hamburger ri-menu-2-line"></i>
             </div>
         </header>
-
-        <div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Mobile navigation">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </div>
 
         <main class="content">
 
@@ -91,63 +76,75 @@
                 </ul>
             </section>
 
-            <div class="insect-wrap" aria-hidden="true">
-                <img src="images/discort.webp" alt="Pachyteria equestris specimen in glass dome"
-                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-                <div class="insect-placeholder" style="display:none;">
-                    <span>Insect Image</span>
-                </div>
+            <div class="insect-wrap">
+                <img src="images/discort.webp" alt="Pachyteria equestris specimen in glass dome" />
             </div>
 
             <section class="panel-right" aria-label="Product details">
-                <h1 class="species-name">Pachyteria<br>equestris</h1>
+                <div class="panel-right-inner">
+                    <h1 class="species-name">Pachyteria<br>equestris</h1>
 
-                <div class="meta-row">
-                    <div class="specimen-icon">
-                        <img src="images/cockr.png" alt="">
-                        <span>32 mm</span>
+                    <div class="meta-row">
+                        <div class="specimen-icon">
+                            <img src="images/cockr.png" alt="">
+                            <span>32 mm</span>
+                        </div>
+
+                        <div class="meta-divider"></div>
+
+                        <div class="meta-details">
+                            <div class="meta-item">
+                                <div class="meta-icon">
+                                    <i class="ri-map-pin-fill"></i>
+                                </div>
+                                <div class="meta-text">
+                                    <span class="meta-label">Locality:</span>
+                                    <span class="meta-value">Malaysia</span>
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">
+                                    <i class="ri-men-line"></i>
+                                </div>
+                                <div class="meta-text">
+                                    <span class="meta-label">Sex:</span>
+                                    <span class="meta-value">Male</span>
+                                </div>
+                            </div>
+                            <div class="meta-item">
+                                <div class="meta-icon">
+                                    <i class="ri-ruler-line"></i>
+                                </div>
+                                <div class="meta-text">
+                                    <span class="meta-label">Size:</span>
+                                    <span class="meta-value">32 mm / 12 mm</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="meta-divider"></div>
+                    <p class="price">$5.99</p>
 
-                    <div class="meta-details">
-                        <div class="meta-item">
-                            <span class="meta-label">Locality:</span>
-                            <span class="meta-value">Malaysia</span>
+                    <div class="toggles">
+                        <div class="toggle-row">
+                            <label class="switch">
+                                <input type="checkbox" />
+                                <span class="slider"></span>
+                            </label>
+                            <span class="toggle-label">View detailed antennae</span>
                         </div>
-                        <div class="meta-item">
-
-                            <span class="meta-label">Sex:</span>
-                            <span class="meta-value">Male</span>
-                        </div>
-                        <div class="meta-item">
-
-                            <span class="meta-label">Size:</span>
-                            <span class="meta-value">32 mm / 12 mm</span>
+                        <div class="toggle-row">
+                            <label class="switch">
+                                <input type="checkbox" />
+                                <span class="slider"></span>
+                            </label>
+                            <span class="toggle-label">View underside</span>
                         </div>
                     </div>
+
+                    <button class="btn-collection">Add to collection</button>
                 </div>
 
-                <p class="price">$5.99</p>
-
-                <div class="toggles">
-                    <div class="toggle-row">
-                        <label class="switch">
-                            <input type="checkbox" />
-                            <span class="slider"></span>
-                        </label>
-                        <span class="toggle-label">View detailed antennae</span>
-                    </div>
-                    <div class="toggle-row">
-                        <label class="switch">
-                            <input type="checkbox" />
-                            <span class="slider"></span>
-                        </label>
-                        <span class="toggle-label">View underside</span>
-                    </div>
-                </div>
-
-                <button class="btn-collection">Add to collection</button>
             </section>
 
         </main>
