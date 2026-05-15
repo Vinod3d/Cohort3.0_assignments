@@ -106,7 +106,7 @@ nav {
     "item1 item1 item5 item6 item7 item3 item3"
     "item4 item4 item5 item6 item7 item8 item8"
     "item9 item9 item9 item9 item9 item9 item9";
-  height: 116vh;
+  height: 105vh;
   gap: 5px;
   /* background-color: dodgerblue; */
   padding: 5px;
@@ -289,8 +289,8 @@ text {
 height: 120%;
     background-image: url(images/models/model4.jpeg);
     background-repeat: no-repeat;
-    background-position: -66px -44px;
-    background-size: 172%;
+    background-position: center;
+    background-size: cover;
     border-radius: 20px;
 }
 
@@ -326,8 +326,8 @@ height: 120%;
     top: 13px;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: clamp(70px, 2vw, 90px);
-    height: clamp(70px, 1vw, 90px);
+    width: clamp(80px, 2vw, 90px);
+    height: clamp(80px, 1vw, 90px);
 }
 
 .flower-3 {
