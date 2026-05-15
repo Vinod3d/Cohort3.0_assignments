@@ -99,12 +99,12 @@ nav {
 
 .hero {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 0.2fr 1fr 0.2fr 1fr;
+  grid-template-columns: 1fr 0.2fr 1.2fr 1fr 1.2fr 0.2fr 1fr;
   grid-template-rows: 1fr 1fr 3.5fr 1fr;
   grid-template-areas:
-    "item1 item2 item2 item2 item2 item3 item3"
-    "item1 item5 item6 item7 item7 item3 item3"
-    "item4 item5 item6 item7 item7 item8 item8"
+    "item1 item1 item2 item2 item2 item3 item3"
+    "item1 item1 item5 item6 item7 item3 item3"
+    "item4 item4 item5 item6 item7 item8 item8"
     "item9 item9 item9 item9 item9 item9 item9";
   height: 116vh;
   gap: 5px;
@@ -150,7 +150,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  overflow: auto;
+  overflow: visible;
 }
 
 .item7 {
@@ -286,12 +286,12 @@ text {
 }
 
 .model-4 {
-  height: 120%;
-  background-image: url(images/models/model4.jpeg);
-  background-repeat: no-repeat;
-  background-position: top;
-  background-size: cover;
-  border-radius: 20px;
+height: 120%;
+    background-image: url(images/models/model4.jpeg);
+    background-repeat: no-repeat;
+    background-position: -66px -44px;
+    background-size: 172%;
+    border-radius: 20px;
 }
 
 .model-5 {
@@ -320,6 +320,16 @@ text {
   background-size: 120%;
   border-radius: 20px;
 }
+
+.boom{
+    position: absolute;
+    top: 13px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(70px, 2vw, 90px);
+    height: clamp(70px, 1vw, 90px);
+}
+
 .flower-3 {
   width: clamp(40px, 1vw, 60px);
   height: clamp(40px, 1vw, 60px);
@@ -411,6 +421,7 @@ text {
 }
 
 .pagination-container {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -478,4 +489,197 @@ text {
 .next-page-btn i {
   color: white;
   font-size: 1.2rem;
+}
+
+.skew-rect {
+  height: 27px;
+  width: 14px;
+  background-color: #fac942;
+  transform: skewY(25deg);
+  rotate: 338deg;
+  position: absolute;
+  top: 17%;
+  left: -41px;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet and Small Laptops (up to 1024px) */
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 2rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "item2 item2 item2"
+      "item1 item1 item3"
+      "item5 item6 item7"
+      "item4 item8 item8"
+      "item9 item9 item9";
+    height: auto;
+    gap: 20px;
+    padding: 20px 0;
+  }
+
+  .head-title {
+    font-size: 3rem;
+  }
+
+  .model-4 {
+    height: 400px;
+  }
+
+  .item9 {
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 50px;
+  }
+
+  .flower-3 {
+    display: none;
+  }
+}
+
+/* Mobile Devices (up to 768px) */
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap;
+    padding: 1rem 5%;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    gap: 20px;
+  }
+
+  .item1, .item2, .item3, .item4, .item5, .item6, .item7, .item8, .item9 {
+    width: 100%;
+    grid-area: auto;
+    padding: 10px 0;
+  }
+
+  .head-title {
+    font-size: 2.2rem;
+    padding: 0;
+  }
+
+  .item1 {
+    order: 2;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .text-content {
+      width: 100%;
+      margin: 0 auto;
+  }
+
+  .item2 {
+    order: 1;
+    margin-bottom: 0;
+  }
+  
+  .item2 .flower5 {
+      position: relative;
+      bottom: 0;
+      left: 0;
+      margin: 10px auto;
+  }
+
+  .item3 {
+    order: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .flower2 {
+      margin: 0 auto;
+  }
+
+  .item4 {
+    order: 4;
+    height: auto;
+  }
+
+  .item5, .item6, .item7 {
+    order: 5;
+    height: auto;
+    padding: 5px 0;
+  }
+
+  .model-1, .model-2, .model-3, .model-4, .model-5, .model-6, .model-7 {
+    height: 400px;
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .item8 {
+    order: 6;
+  }
+  
+  .flower4 {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: none;
+      margin: 10px auto;
+  }
+
+  .item9 {
+    order: 7;
+    padding-bottom: 40px;
+  }
+
+  .signature {
+    font-size: 2.5rem;
+  }
+
+  .pagination-container {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .page-info-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .page-number {
+    margin-right: 0;
+    margin-bottom: 5px;
+    font-size: 2.5rem;
+  }
+
+  .skew-rect {
+    display: none;
+  }
+  
+  .quote-mark {
+      font-size: 3rem;
+      top: -40px;
+  }
+}
+
+/* Small Mobile Devices (up to 480px) */
+@media (max-width: 480px) {
+  .head-title {
+    font-size: 1.8rem;
+  }
+
+  .signature {
+    font-size: 2.2rem;
+  }
 }
