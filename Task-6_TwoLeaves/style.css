@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --green: #2d6a2d;
+    --color1: #2a2857;
+    --color1-light:#DAAEEA;
+    --green-light: #4a8c3f;
+    --gold: #c9a227;
+    --orange: #e07b39;
+    --orange-dark: #c96d2a;
+    --cream: #fdf8f0;
+    --brown: #5c3d1e;
+    --teal: #2a7c7c;
+    --pink: #e8b4a0;
+    --color-black: #201c1a;
+    --bg-creme: #fbf9eb;
+}
+
+body { 
+    font-family: 'Roboto', sans-serif;
+    background: var(--bg-creme); 
+    color: #222; 
+    position: relative;
+}
+
+@font-face {
+    font-family: RecklessCondensed;
+    src: url(assets/fonts/RecklessCondensedS-TRIAL-Book.woff);
+}
+
+@font-face {
+    font-family: midnight;
+    src: url(assets/fonts/midnight-sans-rd-12-medium-trial.otf);
+}
+@font-face {
+    font-family: figtree;
+    src: url(assets/fonts/figtree_n4.3c0838aba1701047e60be6a99a1b0a40ce9b8419.woff2);
+}
+  
+.font1 { font-family: "RecklessCondensed", sans-serif; }
+.font2 { font-family: "midnight", sans-serif; }
+.font3 { font-family: "figtree", sans-serif; }
+
+  /* NAV */
+  .nav-link { font-size:13px; font-weight:500; color:#333; letter-spacing:.03em; }
+  /* .nav-link:hover { color: var(--green); } */
+
+  /* HERO */
+  .hero-bg {
+    background: linear-gradient(135deg, #e8f4f8 0%, #d4eee8 40%, #c8e6e0 70%, #b8ddd6 100%);
+  }
+ 
+.badge-title{
+    /* min-height: 2.5rem; */
+    padding: 3px 10px;
+    background: var(--color1-light);
+    font-family: "midnight", sans-serif; 
+    font-size: clamp(2rem, 2.5rem + 1vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -.01em;
+    text-transform: uppercase;
+    border-radius: .375rem;
+    border: 1px solid var(--color-black);
+    transform: rotate(-2deg);
+}
+
+  /* BADGE */
+  .badge-discover { background:#e8f5e9; color:var(--green); border:2px solid var(--green); font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:3px 10px; border-radius:4px; }
+  .badge-orange { background: var(--orange); color:#fff; font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; padding:4px 12px; border-radius:4px; }
+  .badge-journal { background:#fff3e0; color:#c96d2a; border:2px solid #c96d2a; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:3px 10px; border-radius:4px; }
+  .badge-reviews { background:#fff3e0; color:#c96d2a; border:2px solid #c96d2a; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; padding:3px 10px; border-radius:4px; }
+
+  /* SECTION TITLES */
+  .section-tag { font-size:12px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+
+  /* DISCOVER TAGS */
+  .discover-tag { display:inline-block; padding:8px 16px; border:1.5px solid #ccc; border-radius:999px; font-size:13px; color:#444; cursor:pointer; transition:all .2s; white-space:nowrap; }
+  .discover-tag:hover, .discover-tag.active { border-color:var(--green); color:var(--green); background:#f0f8f0; }
+
+  /* PRODUCT CARD */
+  /* .product-card { background:#fff; border-radius:16px; border:1.5px solid #e8e8e8; overflow:hidden; transition:box-shadow .25s,transform .25s; }
+  .product-card:hover { box-shadow:0 8px 32px rgba(0,0,0,.10); transform:translateY(-3px); }
+  .product-card img { width:100%; height:180px; object-fit:contain; background:#f9f7f2; padding:16px; } */
+
+  /* ORIGINS SECTION */
+  .origins-bg {
+    background: url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=1600&q=80') center/cover no-repeat;
+    position:relative;
+  }
+  .origins-bg::before { content:''; position:absolute; inset:0; background:rgba(0,0,0,.35); }
+  .born-text { font-family:'Bebas Neue',cursive; font-size:clamp(3rem,12vw,9rem); letter-spacing:.04em; color:#fff; text-shadow:0 4px 24px rgba(0,0,0,.4); line-height:1; }
+
+  /* REVIEWS */
+  .review-card { background:#fff; border-radius:12px; border:1.5px solid #ede8e0; padding:20px; }
+  .star { color:#f59e0b; font-size:16px; }
+
+  /* CAFE SECTION */
+  .cafe-bg { background:#e07b39; }
+  .lattes-bg { background:#b87333; }
+
+  /* CHAI SECTION */
+  .chai-section { background:#f5f0e8; }
+
+  /* CTA BUTTON */
+  .btn-primary { background:var(--green); color:#fff; padding:12px 28px; border-radius:8px; font-size:14px; font-weight:600; letter-spacing:.04em; transition:background .2s; display:inline-block; }
+  .btn-primary:hover { background:var(--green-light); }
+  .btn-outline { border:2px solid #fff; color:#fff; padding:10px 24px; border-radius:8px; font-size:13px; font-weight:600; letter-spacing:.04em; display:inline-block; transition:all .2s; }
+  .btn-outline:hover { background:#fff; color:var(--brown); }
+  .btn-dark { background:#2c2c2c; color:#fff; padding:10px 24px; border-radius:8px; font-size:13px; font-weight:600; display:inline-block; transition:background .2s; }
+  .btn-dark:hover { background:#111; }
+
+  /* ORANGE GRID */
+  .orange-grid-bg {
+    background-color:#e07b39;
+    background-image: repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,.18) 39px,rgba(255,255,255,.18) 40px),
+                      repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(255,255,255,.18) 39px,rgba(255,255,255,.18) 40px);
+  }
+
+  /* FOOTER */
+  footer { background:#1a2a1a; color:#bbb; }
+  footer a { color:#bbb; font-size:13px; }
+  footer a:hover { color:#fff; }
+  .footer-heading { color:#fff; font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase; margin-bottom:14px; }
+
+  /* JOURNAL CARDS */
+  .journal-card { background:#fff; border-radius:12px; overflow:hidden; border:1.5px solid #e8e8e8; transition:box-shadow .2s; }
+  .journal-card:hover { box-shadow:0 6px 24px rgba(0,0,0,.09); }
+
+  /* CAROUSEL ARROWS */
+  .arrow-btn { width:36px;height:36px;background:#fff;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;flex-shrink:0; }
+
+  /* NEWSLETTER */
+  .newsletter-input { border:1.5px solid #ccc; border-radius:6px; padding:10px 14px; font-size:14px; width:100%; outline:none; }
+  .newsletter-input:focus { border-color:var(--green); }
+
+  /* scroll hide */
+  .scroll-x { overflow-x:auto; scrollbar-width:none; }
+  .scroll-x::-webkit-scrollbar { display:none; }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)} }
+  .animate-up { animation: fadeUp .7s ease both; }
