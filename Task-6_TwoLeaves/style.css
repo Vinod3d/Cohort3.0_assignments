@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-    --green: #2d6a2d;
+    --green: #73BC25;
     --green-light: #b8e287;
     --color1: #2a2857;
     --color1-light:#DAAEEA;
@@ -48,10 +48,6 @@ body {
   background: linear-gradient(135deg, #e8f4f8 0%, #d4eee8 40%, #c8e6e0 70%, #b8ddd6 100%);
 }
 
-.btn-white{
-
-}
-
 .btn {
     display: inline-block;
     padding: 0.75rem 2.5rem;
@@ -64,7 +60,7 @@ body {
     cursor: pointer;
 }
 
-/* Blue Button */
+
 .btn-blue {
     background-color: rgb(49 46 129); /* indigo-950 */
     color: #fff;
@@ -75,7 +71,6 @@ body {
     color: rgb(49 46 129);
 }
 
-/* White Button */
 .btn-white {
     background-color: #fff;
     color: rgb(49 46 129);
@@ -88,7 +83,6 @@ body {
  
 .badge-title{
     padding: 3px 10px;
-    /* background: var(--color1-light); */
     font-family: "midnight", sans-serif; 
     font-size: clamp(2rem, 2.5rem + 1vw, 3.5rem);
     font-weight: 600;
@@ -102,7 +96,7 @@ body {
 }
 
 
-  .discover-tag { 
+.discover-tag { 
     font-family: "RecklessCondensed", sans-serif; 
     font-size: 1.7rem;
     letter-spacing: -.005em;
@@ -111,13 +105,37 @@ body {
     border: .0625rem solid var(--color-black);
     border-radius: 12px;
     transition: all .3s cubic-bezier(.5,0,0,1);
-  }
+}
   
   
-
-  /* ORIGINS SECTION */
-  .origins-bg {
+.origins-bg {
     background: url('assets/images/origin.webp') center/cover no-repeat;
     position:relative;
-  }
+}
 
+
+
+
+  /* FOOTER */
+  footer { background:#1a2a1a; color:#bbb; }
+  footer a { color:#bbb; font-size:13px; }
+  footer a:hover { color:#fff; }
+  .footer-heading { color:#fff; font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase; margin-bottom:14px; }
+
+  /* JOURNAL CARDS */
+  .journal-card { background:#fff; border-radius:12px; overflow:hidden; border:1.5px solid #e8e8e8; transition:box-shadow .2s; }
+  .journal-card:hover { box-shadow:0 6px 24px rgba(0,0,0,.09); }
+
+  /* CAROUSEL ARROWS */
+  .arrow-btn { width:36px;height:36px;background:#fff;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;flex-shrink:0; }
+
+  /* NEWSLETTER */
+  .newsletter-input { border:1.5px solid #ccc; border-radius:6px; padding:10px 14px; font-size:14px; width:100%; outline:none; }
+  .newsletter-input:focus { border-color:var(--green); }
+
+  /* scroll hide */
+  .scroll-x { overflow-x:auto; scrollbar-width:none; }
+  .scroll-x::-webkit-scrollbar { display:none; }
+
+  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)} }
+  .animate-up { animation: fadeUp .7s ease both; }
