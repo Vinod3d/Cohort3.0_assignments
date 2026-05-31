@@ -10,7 +10,7 @@
     --orange-light: #FFCB96;
     --orange-dark: #FF7F31;
     --cream: #fdf8f0;
-    --brown: #5c3d1e;
+    --brown: #9F6429;
     --teal-light: #B0E8C1;
     --pink: #e8b4a0;
     --color-black: #201c1a;
@@ -115,27 +115,3 @@ body {
 
 
 
-
-  /* FOOTER */
-  footer { background:#1a2a1a; color:#bbb; }
-  footer a { color:#bbb; font-size:13px; }
-  footer a:hover { color:#fff; }
-  .footer-heading { color:#fff; font-weight:700; font-size:13px; letter-spacing:.06em; text-transform:uppercase; margin-bottom:14px; }
-
-  /* JOURNAL CARDS */
-  .journal-card { background:#fff; border-radius:12px; overflow:hidden; border:1.5px solid #e8e8e8; transition:box-shadow .2s; }
-  .journal-card:hover { box-shadow:0 6px 24px rgba(0,0,0,.09); }
-
-  /* CAROUSEL ARROWS */
-  .arrow-btn { width:36px;height:36px;background:#fff;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;cursor:pointer;border:none;flex-shrink:0; }
-
-  /* NEWSLETTER */
-  .newsletter-input { border:1.5px solid #ccc; border-radius:6px; padding:10px 14px; font-size:14px; width:100%; outline:none; }
-  .newsletter-input:focus { border-color:var(--green); }
-
-  /* scroll hide */
-  .scroll-x { overflow-x:auto; scrollbar-width:none; }
-  .scroll-x::-webkit-scrollbar { display:none; }
-
-  @keyframes fadeUp { from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)} }
-  .animate-up { animation: fadeUp .7s ease both; }
