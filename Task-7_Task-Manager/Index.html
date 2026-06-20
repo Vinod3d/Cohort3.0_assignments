@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Task Manager - Master Your Productivity with Vanilla JavaScript">
+    <meta name="theme-color" content="#6366f1">
+    <title>Task Manager - Master Your Productivity</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet"/>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Navigation -->
+        <header class="header">
+            <div class="header-content">
+                <div class="header-left">
+                    <h1 class="app-title">
+                        <i class="ri-todo-line"></i> Task Manager
+                    </h1>
+                    <p class="app-subtitle">Master Your Productivity</p>
+                </div>
+                <div class="header-right">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme"
+                        title="Toggle Theme">
+                        <span class="theme-icon"><i class="ri-moon-fill"></i></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main" role="main">
+            <section class="task-creation" aria-label="Add new task">
+                <h2>✨ Add New Task</h2>
+                <form id="taskForm" class="task-form">
+                    <div class="form-group">
+                        <!-- <label for="taskInput" class="sr-only">Task Title</label> -->
+                        <input type="text" id="taskInput" class="task-input"
+                            placeholder="Enter task title (e.g., Buy groceries, Complete project)..." required
+                            maxlength="100" aria-label="Task title" aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <!-- <label for="categorySelect" class="sr-only">Task Category</label> -->
+                        <select id="categorySelect" class="category-select" aria-label="Task category">
+                            <option value="work">💼 Work</option>
+                            <option value="personal" selected>👤 Personal</option>
+                            <option value="shopping">🛒 Shopping</option>
+                            <option value="health">❤️ Health</option>
+                            <option value="education">📚 Education</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" aria-label="Add new task button">
+                        <span><i class="ri-add-large-line"></i> Add Task</span>
+                    </button>
+                </form>
+            </section>
+
+            <!-- statistics of task -->
+            <section class="controls-section" aria-label="Task statistics and filters">
+                <div class="stats-container">
+                    <div class="stat-card" role="region" aria-label="Total tasks">
+                        <div class="stat-number" id="totalTasks" aria-live="polite">0</div>
+                        <div class="stat-label">Total Tasks</div>
+                    </div>
+                    <div class="stat-card" role="region" aria-label="Completed tasks">
+                        <div class="stat-number" id="completedTasks" aria-live="polite">0</div>
+                        <div class="stat-label">✓ Completed</div>
+                    </div>
+                    <div class="stat-card" role="region" aria-label="Pending tasks">
+                        <div class="stat-number" id="pendingTasks" aria-live="polite">0</div>
+                        <div class="stat-label">⏳ Pending</div>
+                    </div>
+                </div>
+
+                <div class="filters-container">
+                    <div class="filter-group">
+                        <!-- <label for="searchInput" class="sr-only">Search Tasks</label> -->
+                        <input type="text" id="searchInput" class="search-input"
+                            placeholder="🔍 Search tasks by title..." aria-label="Search tasks"
+                            aria-describedby="search-help">
+                    </div>
+                    <div class="filter-group">
+                        <!-- <label for="filterCategory" class="sr-only">Filter by Category</label> -->
+                        <select id="filterCategory" class="filter-select" aria-label="Filter tasks by category">
+                            <option value="">🌐 All Categories</option>
+                            <option value="work">💼 Work</option>
+                            <option value="personal">👤 Personal</option>
+                            <option value="shopping">🛒 Shopping</option>
+                            <option value="health">❤️ Health</option>
+                            <option value="education">📚 Education</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-secondary" id="clearAllBtn" aria-label="Clear all tasks">
+                        🗑️ Clear All
+                    </button>
+                </div>
+            </section>
+
+            <!-- Tasks Display Section -->
+            <section class="tasks-section" aria-label="Task list">
+                <h2>📝 My Tasks</h2>
+                <div class="tasks-container" id="tasksContainer" role="list" aria-label="List of tasks">
+                    <!-- Tasks will be dynamically inserted here -->
+                </div>
+                <div id="emptyState" class="empty-state" role="status" aria-live="polite">
+                    <p>🚀 No tasks yet. Add one to get started!</p>
+                    <p class="empty-state-hint">Create your first task to master your productivity</p>
+                </div>
+            </section>
+
+
+
+
+
+
+
+        </main>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
