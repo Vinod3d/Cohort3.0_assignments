@@ -8,3 +8,5 @@
 | 4 | Task-4 DeepStyle | [Link](https://cohort3-0-assignments-xgbi.vercel.app/)|
 | 5 | Task-5 Dribble | [Link](https://cohort3-0-assignments-37jh.vercel.app/)|
 | 6 | Task-6 TwoLeaves | [Link](https://cohort3-0-assignments-y8ah.vercel.app/)|
+| 7 | Task-7 TaskManager | [Link](https://cohort3-0-assignments-a597.vercel.app/)|
+
