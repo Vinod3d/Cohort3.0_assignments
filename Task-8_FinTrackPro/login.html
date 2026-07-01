@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FinTrack Pro</title>
+
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f4f7f6;
+            font-family: "Inter", sans-serif;
+        }
+
+        .login-wrapper {
+            width: 100%;
+            max-width: 350px;
+            padding: 30px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-box {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+
+        .input-box input {
+            box-sizing: border-box;
+            margin-top: 5px;
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+        .login-btn {
+            cursor: pointer;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 6px;
+            background-color: #0056b3;
+        }
+
+        .register-link {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        .bottom-text {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-wrapper">
+        <h2>Welcome Back</h2>
+        <p>Login to FinTrack Pro</p>
+
+        <form id="loginForm">
+            <div class="input-box">
+                <label>Username</label>
+                <input type="text" id="loginUsername" required>
+            </div>
+            <div class="input-box">
+                <label>Password</label>
+                <input type="password" id="loginPassword" required>
+            </div>
+            <button class="login-btn" type="submit">
+                Login
+            </button>
+        </form>
+
+        <p class="bottom-text">
+            Don't have an account?
+            <a class="register-link" href="register.html">
+                Register here
+            </a>
+        </p>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
