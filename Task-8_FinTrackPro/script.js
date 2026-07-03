@@ -44,6 +44,39 @@ const showToast = (
   }, duration);
 };
 
+// Confirm Modal in place of confirm()
+function confirmModal(message, callback) {
+  const modal = document.createElement("div");
+  modal.classList.add("confirm-modal");
+  modal.innerHTML = `
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Confirmation</h3>
+    </div>
+    <div class="modal-body">
+      <p>${message}</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-cancel alert-danger">Cancel</button>
+      <button class="btn btn-confirm alert-success">Confirm</button>
+    </div>
+  </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  modal.querySelector(".btn-cancel").addEventListener("click", () => {
+    modal.remove();
+  });
+
+  modal.querySelector(".btn-confirm").addEventListener("click", () => {
+    callback();
+    modal.remove();
+  });
+}
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   checkAuth();
 
@@ -107,21 +140,6 @@ function saveUser(user) {
       localStorage.setItem("users", JSON.stringify(users));
     }
   }
-}
-
-function escapeHTML(str) {
-  if (!str) return "";
-  return str.replace(
-    /[&<>'"]/g,
-    (tag) =>
-      ({
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        "'": "&#39;",
-        '"': "&quot;",
-      })[tag] || tag,
-  );
 }
 
 /* ============ Login Page Logic ========== */
@@ -378,8 +396,8 @@ function renderTransactionsTable() {
 
     tr.innerHTML = `
             <td>${formattedDate}</td>
-            <td>${escapeHTML(t.description)}</td>
-            <td><span class="tag">${escapeHTML(t.category)}</span></td>
+            <td>${t.description}</td>
+            <td><span class="tag">${t.category}</span></td>
             <td class="${amtClass}">${amtPrefix}${currency}${parseFloat(t.amount).toFixed(2)}</td>
             <td>
                 <button class="action-btn btn-edit" data-id="${t.id}" title="Edit">
@@ -676,13 +694,13 @@ function setupDashboardEventHandlers() {
         }
       } else if (deleteBtn) {
         const txId = deleteBtn.getAttribute("data-id");
-        if (confirm("Are you sure you want to delete this transaction?")) {
+        confirmModal("Are you sure you want to delete this transaction?", () => {
           activeUser.transactions = activeUser.transactions.filter(
             (t) => t.id.toString() !== txId.toString(),
           );
           saveUser(activeUser);
           renderDashboard();
-        }
+        });
       }
     });
   }
@@ -742,7 +760,7 @@ function setupDashboardEventHandlers() {
   if (resetDataBtn) {
     resetDataBtn.addEventListener("click", () => {
       if (
-        confirm(
+        confirmModal(
           "Are you sure you want to reset all transaction data? This action is permanent!",
         )
       ) {
