@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Dashboard</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="dashboard-bg" id="dashboard-bg"></div>
+    <div class="dashboard-overlay"></div>
+    <div class="dashboard">
+        <nav class="glass-nav">
+            <div class="logo" id="logo-dashboard-trigger" style="cursor: pointer;">
+                <i class="ri-calendar-todo-line"></i>
+                <span>Productivity Dashboard</span>
+            </div>
+            <div class="nav-right">
+                <button class="back-btn" id="dashboard-back-btn" style="display: none;">
+                    <i class="ri-arrow-left-line"></i> Dashboard
+                </button>
+                <div class="nav-clock" id="nav-clock">11:30:00 AM</div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="ri-sun-line"></i>
+                </button>
+            </div>
+        </nav>
+
+        <!-- View 1: Main Dashboard Container -->
+        <main class="dashboard-container" id="dashboard-view">
+            <!-- Hero Weather/Time Card -->
+            <div class="weather-card glass-card">
+                <div class="weather-content">
+                    <div class="times">
+                        <div class="time" id="hero-time">11:30 AM</div>
+                        <div class="date" id="hero-date">Tuesday, Jul 7</div>
+                    </div>
+                    <div class="weather">
+                        <div class="weather clickable-weather" id="weather-info-click"
+                            title="Click to cycle weather (Sunny, Cloudy, Rainy)">
+                            <div class="temp">
+                                <i class="ri-sun-fill" id="weather-icon"></i>
+                                <span id="hero-temp">72°F</span>
+                            </div>
+                            <div class="sky-wrap">
+                                <span class="sky" id="hero-sky">Sunny</span>
+                                <span class="change-badge"><i class="ri-loop-left-line"></i> Cycle</span>
+                            </div>
+                            <div class="location">
+                                <i class="ri-map-pin-fill"></i>
+                                <span id="hero-location">San Francisco, CA</span>
+                            </div>
+                        </div>
+                        <div class="moisture">
+                            <div class="moisture-item">
+                                <i class="ri-water-drop-fill"></i>
+                                <span id="hero-humidity">Humidity: 45%</span>
+                            </div>
+                            <div class="moisture-item">
+                                <i class="ri-windy-fill"></i>
+                                <span id="hero-wind">Wind: 5mph</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quotes">
+                    <i class="ri-double-quotes-l quote-icon"></i>
+                    <p class="quote-text" id="hero-quote">
+                        Your mind is for having ideas, not holding them. Focus on what matters, one step at a time.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bento Grid of Features -->
+            <div class="feature-cards">
+                <!-- Todo List Card -->
+                <div class="feature-card glass-card" id="todo-card-wrapper">
+                    <div class="video-container">
+                        <video autoplay muted loop playsinline>
+                            <source src="./assets/todo.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-header">
+                            <div class="card-title-wrap">
+                                <i class="ri-checkbox-multiple-line card-icon"></i>
+                                <h3>Todo List</h3>
+                            </div>
+                        </div>
+                        <span class="badge" id="todo-badge">0 Active</span>
+                    </div>
+                </div>
+
+                <!-- Daily Planner Card -->
+                <div class="feature-card glass-card" id="planner-card-wrapper">
+                    <div class="video-container">
+                        <video autoplay muted loop playsinline>
+                            <source src="./assets/calender.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-header">
+                            <div class="card-title-wrap">
+                                <i class="ri-calendar-line card-icon"></i>
+                                <h3>Daily Planner</h3>
+                            </div>
+                        </div>
+                        <span class="badge badge-accent" id="planner-badge">0 Events</span>
+                    </div>
+                </div>
+
+                <!-- Motivation Card -->
+                <div class="feature-card glass-card" id="motivation-card-wrapper">
+                    <div class="video-container">
+                        <video autoplay muted loop playsinline>
+                            <source src="./assets/quote.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-header">
+                            <div class="card-title-wrap">
+                                <i class="ri-sparkling-line card-icon"></i>
+                                <h3>Motivation</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pomodoro Timer Card -->
+                <div class="feature-card glass-card" id="pomodoro-card-wrapper">
+                    <div class="video-container">
+                        <video autoplay muted loop playsinline>
+                            <source src="./assets/timer.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-header">
+                            <div class="card-title-wrap">
+                                <i class="ri-timer-flash-line card-icon"></i>
+                                <h3>Pomodoro</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Goals Card -->
+                <div class="feature-card glass-card" id="goals-card-wrapper">
+                    <div class="video-container">
+                        <video autoplay muted loop playsinline>
+                            <source src="./assets/goal.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay"></div>
+                    </div>
+                    <div class="card-info">
+                        <div class="card-header">
+                            <div class="card-title-wrap">
+                                <i class="ri-focus-3-line card-icon"></i>
+                                <h3>Daily Goals</h3>
+                            </div>
+                        </div>
+                        <span class="badge badge-goals" id="goals-progress-badge">0/3 Completed</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- View 2: Todo Detail splitscreen -->
+        <section class="detail-container detail-view" id="todo-view" style="display: none;">
+            <div class="detail-card glass-card">
+                <div class="detail-workspace">
+                    <div class="workspace-header">
+                        <i class="ri-checkbox-multiple-line workspace-icon"></i>
+                        <div>
+                            <h2>Todo Tasks</h2>
+                            <p class="workspace-desc">Capture, organize, and check off your daily goals.</p>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="todo-input-field" placeholder="What needs to be done?">
+                        <button class="input-btn" id="add-todo-item-btn"><i class="ri-add-line"></i> Add</button>
+                    </div>
+                    <div class="filter-bar">
+                        <div class="filters">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="active">Active</button>
+                            <button class="filter-btn" data-filter="completed">Completed</button>
+                        </div>
+                        <span class="badge" id="todo-detail-badge">0 Active</span>
+                    </div>
+                    <div class="todo-list-container page-list-container">
+                        <ul class="todo-list-items" id="todo-items-list">
+                            <!-- Rendered dynamically -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="detail-illustration">
+                    <video autoplay muted loop playsinline>
+                        <source src="./assets/todo.mp4" type="video/mp4">
+                    </video>
+                    <div class="illustration-overlay"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- View 3: Daily Planner Detail splitscreen -->
+        <section class="detail-container detail-view" id="planner-view" style="display: none;">
+            <div class="detail-card glass-card">
+                <div class="detail-workspace">
+                    <div class="workspace-header">
+                        <i class="ri-calendar-line workspace-icon"></i>
+                        <div>
+                            <h2>Daily Planner</h2>
+                            <p class="workspace-desc">Block out task segments and map your day's path.</p>
+                        </div>
+                    </div>
+                    <div class="planner-form page-planner-form">
+                        <div class="form-row">
+                            <div class="time-input-wrap">
+                                <label for="planner-time-field">Start Time</label>
+                                <input type="time" id="planner-time-field" value="09:00">
+                            </div>
+                            <div class="desc-input-wrap">
+                                <label for="planner-desc-field">Agenda Activity</label>
+                                <input type="text" id="planner-desc-field" placeholder="E.g., Review presentation, Lunch, Synch...">
+                            </div>
+                        </div>
+                        <button class="input-btn" id="add-planner-item-btn">
+                            <i class="ri-add-line"></i> Add to Agenda
+                        </button>
+                    </div>
+                    <div class="timeline-header">
+                        <h3>Today's Timeblocks</h3>
+                        <span class="badge badge-accent" id="planner-detail-badge">0 Events</span>
+                    </div>
+                    <div class="planner-list-container page-list-container">
+                        <div class="planner-timeline" id="planner-timeline-list">
+                            <!-- Rendered dynamically -->
+                        </div>
+                    </div>
+                </div>
+                <div class="detail-illustration">
+                    <video autoplay muted loop playsinline>
+                        <source src="./assets/calender.mp4" type="video/mp4">
+                    </video>
+                    <div class="illustration-overlay"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- View 4: Motivation Quotes Detail splitscreen -->
+        <section class="detail-container detail-view" id="motivation-view" style="display: none;">
+            <div class="detail-card glass-card">
+                <div class="detail-workspace motivation-workspace-page">
+                    <div class="workspace-header">
+                        <i class="ri-sparkling-line workspace-icon"></i>
+                        <div>
+                            <h2>Daily Motivation</h2>
+                            <p class="workspace-desc">Fuel your drive with curated thoughts from historical minds.</p>
+                        </div>
+                    </div>
+                    <div class="quote-categories">
+                        <button class="category-chip active" data-category="all">All Wisdom</button>
+                        <button class="category-chip" data-category="productivity">Productivity</button>
+                        <button class="category-chip" data-category="focus">Focus</button>
+                        <button class="category-chip" data-category="persistence">Persistence</button>
+                    </div>
+                    <div class="quote-canvas">
+                        <i class="ri-double-quotes-l quote-decor"></i>
+                        <p class="quote-display" id="motivation-quote-display">
+                            "The secret of getting ahead is getting started."
+                        </p>
+                        <span class="quote-author" id="motivation-quote-author">— Mark Twain</span>
+                    </div>
+                    <div class="workspace-actions">
+                        <button class="input-btn wide-btn" id="refresh-quote-btn">
+                            <i class="ri-refresh-line"></i> Get Another Quote
+                        </button>
+                    </div>
+                </div>
+                <div class="detail-illustration">
+                    <video autoplay muted loop playsinline>
+                        <source src="./assets/quote.mp4" type="video/mp4">
+                    </video>
+                    <div class="illustration-overlay"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- View 5: Pomodoro Timer Detail splitscreen -->
+        <section class="detail-container detail-view" id="pomodoro-view" style="display: none;">
+            <div class="detail-card glass-card">
+                <div class="detail-workspace pomodoro-workspace-page">
+                    <div class="workspace-header">
+                        <i class="ri-timer-flash-line workspace-icon"></i>
+                        <div>
+                            <h2>Pomodoro Focus</h2>
+                            <p class="workspace-desc">Work in distraction-free intervals. Boost cognitive throughput.</p>
+                        </div>
+                    </div>
+                    <div class="timer-section">
+                        <div class="timer-circle-wrapper">
+                            <svg class="progress-ring" width="180" height="180">
+                                <circle class="progress-ring__circle" stroke="rgba(255,255,255,0.04)" stroke-width="8" fill="transparent" r="80" cx="90" cy="90"/>
+                                <circle class="progress-ring__circle" id="pomodoro-progress" stroke="var(--accent)" stroke-width="8" fill="transparent" r="80" cx="90" cy="90"/>
+                            </svg>
+                            <div class="timer-text-big" id="pomodoro-time">25:00</div>
+                        </div>
+                    </div>
+                    <div class="pomo-settings">
+                        <div class="setting-item">
+                            <label for="work-duration-input">Focus (mins)</label>
+                            <input type="number" id="work-duration-input" min="1" max="60" value="25">
+                        </div>
+                        <div class="setting-item">
+                            <label for="break-duration-input">Break (mins)</label>
+                            <input type="number" id="break-duration-input" min="1" max="30" value="5">
+                        </div>
+                    </div>
+                    <div class="pomo-actions">
+                        <button class="pomo-btn" id="start-pomodoro" aria-label="Start Session">
+                            <i class="ri-play-fill"></i> Start
+                        </button>
+                        <button class="pomo-btn" id="pause-pomodoro" aria-label="Pause Session" style="display:none;">
+                            <i class="ri-pause-fill"></i> Pause
+                        </button>
+                        <button class="pomo-btn reset" id="reset-pomodoro" aria-label="Reset Timer">
+                            <i class="ri-restart-line"></i> Reset
+                        </button>
+                    </div>
+                </div>
+                <div class="detail-illustration">
+                    <video autoplay muted loop playsinline>
+                        <source src="./assets/timer.mp4" type="video/mp4">
+                    </video>
+                    <div class="illustration-overlay"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- View 6: Daily Goals Detail splitscreen -->
+        <section class="detail-container detail-view" id="goals-view" style="display: none;">
+            <div class="detail-card glass-card">
+                <div class="detail-workspace goals-workspace-page">
+                    <div class="workspace-header">
+                        <i class="ri-focus-3-line workspace-icon"></i>
+                        <div>
+                            <h2>Daily Goals</h2>
+                            <p class="workspace-desc">Identify 3 critical outcomes for your day. Stay disciplined.</p>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="goal-input-field" placeholder="Enter a new daily goal...">
+                        <button class="input-btn" id="add-goal-btn"><i class="ri-add-line"></i> Add Goal</button>
+                    </div>
+                    <div class="goals-stats-panel">
+                        <div class="stats-text">
+                            <h3>Focus Completion</h3>
+                            <span class="badge badge-goals" id="goals-progress-badge">0/3 Completed</span>
+                        </div>
+                        <div class="stats-bar-wrapper">
+                            <div class="stats-bar-fill" id="goals-progress-fill" style="width: 0%;"></div>
+                        </div>
+                    </div>
+                    <div class="goals-list-container page-list-container" id="goals-list-container">
+                        <!-- Rendered dynamically -->
+                    </div>
+                </div>
+                <div class="detail-illustration">
+                    <video autoplay muted loop playsinline>
+                        <source src="./assets/goal.mp4" type="video/mp4">
+                    </video>
+                    <div class="illustration-overlay"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Alert Toast Notification -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
