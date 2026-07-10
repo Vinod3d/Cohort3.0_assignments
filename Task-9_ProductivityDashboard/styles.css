@@ -5,9 +5,11 @@
   --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   --text-primary: #f8fafc;
   --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
+  --text-muted: #d3cece;
+  /* --text-muted: #94a3b8; */
   --accent: #6366f1; /* Indigo */
-  --accent-light: #818cf8;
+  --accent-light: #3a49cf;
+  /* --accent-light: #818cf8; */
   --accent-glow: #38bdf8; /* Cyan */
   --accent-glow-border: rgba(56, 189, 248, 0.4);
   --accent-shadow-glow: rgba(99, 102, 241, 0.15);
@@ -41,9 +43,9 @@
   --card-border: rgba(0, 0, 0, 0.08);
   --card-shadow:
     0 10px 30px -10px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.02);
-  --text-primary: #0f172a;
+  --text-primary: #000103;
   --text-secondary: #1e293b;
-  --text-muted: #475569;
+  --text-muted: #3b3d41;
   --accent: #4f46e5;
   --accent-light: #6366f1;
   --accent-glow: #0284c7;
@@ -413,7 +415,8 @@ body {
 
 .quote-text {
   font-style: italic;
-  font-size: 15px;
+  font-size: 18px;
+  font-weight: 500;
   line-height: 1.6;
   color: var(--text-secondary);
   padding-left: 28px;
@@ -582,6 +585,8 @@ body {
   border-color: #10b981;
 }
 
+
+
 .checkmark:after {
   content: "";
   position: absolute;
@@ -606,6 +611,7 @@ body {
   text-decoration: line-through;
   color: var(--text-muted);
 }
+
 
 .goal-text {
   transition: all 0.25s ease;
@@ -683,9 +689,16 @@ body {
   justify-content: space-between;
   padding: 12px 16px;
   background: var(--input-bg);
-  border: 1px solid var(--input-border);
+  background: #c4131315;
+  /* border: 1px solid var(--input-border); */
+  border: rgba(255, 0, 0, 0.418) 1px solid;
   border-radius: 14px;
   transition: all 0.2s ease;
+}
+
+.todo-item-li.completed {
+  border: 0.3px solid #0a4e2d8e;
+  background-color: rgba(53, 110, 58, 0.233);
 }
 
 .todo-item-li:hover {

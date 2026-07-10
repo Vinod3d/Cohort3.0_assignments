@@ -17,7 +17,7 @@ const BACKGROUNDS = {
     sunny: "https://plus.unsplash.com/premium_photo-1661957387235-3bc814072fb3?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     cloudy: "https://images.unsplash.com/photo-1752563574621-2342cb20bd0b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     mist: "https://images.unsplash.com/photo-1482841628122-9080d44bb807?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    rainy: "https://plus.unsplash.com/premium_photo-1664910358669-b19dce4be056?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    rainy: "https://images.unsplash.com/uploads/14116603688211a68546c/30f8f30b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     snow: "https://images.unsplash.com/photo-1453306458620-5bbef13a5bca?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     storm: "https://images.unsplash.com/photo-1516490981167-dc990a242afe?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
@@ -25,7 +25,7 @@ const BACKGROUNDS = {
     sunny: "https://images.unsplash.com/photo-1728519454370-8f5341cd1a3f?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     cloudy: "https://images.unsplash.com/photo-1488226941561-6d7a806ae42a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     mist: "https://images.unsplash.com/photo-1503745328377-1f4355a2284b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    rainy: "https://images.unsplash.com/photo-1548206763-86dda956a599?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    rainy: "https://images.unsplash.com/photo-1498847559558-1e4b1a7f7a2f?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     snow: "https://plus.unsplash.com/premium_photo-1658506822827-fb0677fb8e1b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     storm: "https://images.unsplash.com/photo-1475116127127-e3ce09ee84e1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   }
@@ -83,24 +83,67 @@ const WEATHER_CODE_MAP = {
 
 // --- motivational quotes data ---
 const MOTIVATIONAL_QUOTES = [
-  { text: "The secret of getting ahead is getting started.", author: "Mark Twain", category: "productivity" },
-  { text: "It always seems impossible until it's done.", author: "Nelson Mandela", category: "persistence" },
-  { text: "Don't watch the clock; do what it does. Keep going.", author: "Sam Levenson", category: "persistence" },
-  { text: "Act as if what you do makes a difference. It does.", author: "William James", category: "focus" },
-  { text: "Quality is not an act, it is a habit.", author: "Aristotle", category: "productivity" },
-  { text: "Believe you can and you're halfway there.", author: "Theodore Roosevelt", category: "focus" },
-  { text: "Start where you are. Use what you have. Do what you can.", author: "Arthur Ashe", category: "productivity" },
-  { text: "Focus on being productive instead of busy.", author: "Tim Ferriss", category: "focus" },
-  { text: "You do not rise to the level of your goals. You fall to the level of your systems.", author: "James Clear", category: "productivity" },
-  { text: "Your mind is for having ideas, not holding them.", author: "David Allen", category: "focus" }
-];
-
-const HERO_QUOTES = [
-  "Your mind is for having ideas, not holding them. Focus on what matters, one step at a time.",
-  "Deep work: professional activities performed in a state of distraction-free concentration.",
-  "Productivity isn't about doing more, it's about doing what matters most with intention.",
-  "Simplicity is the ultimate sophistication. Simplify your schedule, maximize your impact.",
-  "Focus on the process, not the outcome. Consistency builds momentum."
+  { text: "उठो, जागो और तब तक मत रुको जब तक लक्ष्य प्राप्त न हो जाए।", author: "स्वामी विवेकानंद", category: "persistence" },
+  { text: "तुम्हें अंदर से बाहर की ओर विकसित होना होगा। कोई तुम्हें सिखा नहीं सकता, कोई तुम्हें आध्यात्मिक नहीं बना सकता।", author: "स्वामी विवेकानंद", category: "mindset" },
+  { text: "एक समय में एक काम करो, और ऐसा करते समय अपनी पूरी आत्मा उसमें डाल दो।", author: "स्वामी विवेकानंद", category: "focus" },
+  { text: "खुद को कमजोर समझना सबसे बड़ा पाप है।", author: "स्वामी विवेकानंद", category: "mindset" },
+  { text: "सपने वो नहीं जो आप नींद में देखते हैं, सपने वो हैं जो आपको सोने न दें।", author: "डॉ. ए. पी. जे. अब्दुल कलाम", category: "success" },
+  { text: "यदि तुम सूरज की तरह चमकना चाहते हो, तो पहले सूरज की तरह जलना सीखो।", author: "डॉ. ए. पी. जे. अब्दुल कलाम", category: "discipline" },
+  { text: "आत्मविश्वास और कड़ी मेहनत असफलता नाम की बीमारी को मारने की सबसे अच्छी दवा हैं।", author: "डॉ. ए. पी. जे. अब्दुल कलाम", category: "persistence" },
+  { text: "अपने मिशन में सफल होने के लिए, तुम्हें अपने लक्ष्य के प्रति एकचित्त निष्ठा रखनी होगी।", author: "डॉ. ए. पी. जे. अब्दुल कलाम", category: "focus" },
+  { text: "भविष्य इस बात पर निर्भर करता है कि आप आज क्या करते हैं।", author: "महात्मा गांधी", category: "productivity" },
+  { text: "पहले वे आपको नज़रअंदाज़ करेंगे, फिर आप पर हँसेंगे, फिर आपसे लड़ेंगे, और तब आप जीत जाएंगे।", author: "महात्मा गांधी", category: "persistence" },
+  { text: "खुद वो बदलाव बनिए जो आप दुनिया में देखना चाहते हैं।", author: "महात्मा गांधी", category: "mindset" },
+  { text: "ताकत शारीरिक क्षमता से नहीं आती, यह अदम्य इच्छाशक्ति से आती है।", author: "महात्मा गांधी", category: "discipline" },
+  { text: "जीवन साइकिल चलाने जैसा है। संतुलन बनाए रखने के लिए आपको चलते रहना होता है।", author: "अल्बर्ट आइंस्टीन", category: "persistence" },
+  { text: "जिस व्यक्ति ने कभी गलती नहीं की, उसने कभी कुछ नया करने की कोशिश नहीं की।", author: "अल्बर्ट आइंस्टीन", category: "mindset" },
+  { text: "कल्पना ज्ञान से अधिक महत्वपूर्ण है।", author: "अल्बर्ट आइंस्टीन", category: "mindset" },
+  { text: "कठिनाइयों के बीच ही अवसर छिपे होते हैं।", author: "अल्बर्ट आइंस्टीन", category: "success" },
+  { text: "मैं असफल नहीं हुआ हूँ। मैंने केवल 10,000 ऐसे तरीके खोजे हैं जो काम नहीं करते।", author: "थॉमस ए. एडिसन", category: "persistence" },
+  { text: "हमारी सबसे बड़ी कमजोरी हार मान लेना है। सफल होने का सबसे निश्चित तरीका है एक बार और प्रयास करना।", author: "थॉमस ए. एडिसन", category: "persistence" },
+  { text: "प्रतिभा एक प्रतिशत प्रेरणा और निन्यानवे प्रतिशत पसीना है।", author: "थॉमस ए. एडिसन", category: "discipline" },
+  { text: "अवसर अधिकतर लोगों से इसलिए छूट जाता है क्योंकि वह काम के कपड़ों में आता है और काम जैसा दिखता है।", author: "थॉमस ए. एडिसन", category: "productivity" },
+  { text: "सफलता अंतिम नहीं है, असफलता घातक नहीं है; मायने रखता है आगे बढ़ते रहने का साहस।", author: "विंस्टन चर्चिल", category: "persistence" },
+  { text: "यदि आप नरक से गुजर रहे हैं, तो चलते रहिए।", author: "विंस्टन चर्चिल", category: "persistence" },
+  { text: "सुधार करना बदलना है; पूर्ण होना अक्सर बदलते रहना है।", author: "विंस्टन चर्चिल", category: "mindset" },
+  { text: "आपका समय सीमित है, इसलिए इसे किसी और की जिंदगी जीकर बर्बाद मत कीजिए।", author: "स्टीव जॉब्स", category: "focus" },
+  { text: "महान काम करने का एकमात्र तरीका है कि आप वह करें जिसे आप प्यार करते हैं।", author: "स्टीव जॉब्स", category: "success" },
+  { text: "कभी-कभी जिंदगी आपके सिर पर ईंट से वार करती है, लेकिन विश्वास मत खोइए।", author: "स्टीव जॉब्स", category: "persistence" },
+  { text: "नवाचार एक नेता और अनुयायी के बीच अंतर करता है।", author: "स्टीव जॉब्स", category: "success" },
+  { text: "जो लोग इतने पागल होते हैं कि सोचते हैं कि वे दुनिया बदल सकते हैं, वही इसे बदलते हैं।", author: "स्टीव जॉब्स", category: "mindset" },
+  { text: "मैं हवा की दिशा नहीं बदल सकता, लेकिन मैं अपने पाल इस तरह समायोजित कर सकता हूँ कि हमेशा अपने गंतव्य तक पहुँच सकूँ।", author: "जिमी डीन", category: "mindset" },
+  { text: "मैं अपनी सफलता का श्रेय इस बात को देता हूँ कि मैंने कभी कोई बहाना नहीं बनाया।", author: "फ्लोरेंस नाइटिंगेल", category: "discipline" },
+  { text: "जो हमारे पीछे है और जो हमारे सामने है, वह उन चीजों की तुलना में बहुत छोटा है जो हमारे भीतर हैं।", author: "राल्फ वाल्डो इमर्सन", category: "mindset" },
+  { text: "जो व्यक्ति स्वयं पर विजय पा लेता है, वही सबसे बड़ा विजेता है।", author: "गौतम बुद्ध", category: "discipline" },
+  { text: "हजारों लड़ाइयाँ जीतने से बेहतर है स्वयं पर विजय प्राप्त करना।", author: "गौतम बुद्ध", category: "discipline" },
+  { text: "मन ही सब कुछ है; आप जो सोचते हैं, वही बन जाते हैं।", author: "गौतम बुद्ध", category: "mindset" },
+  { text: "शांति भीतर से आती है, इसे बाहर मत खोजो।", author: "गौतम बुद्ध", category: "focus" },
+  { text: "किसी भी काम को शुरू करने का तरीका है बातें छोड़ना और करना शुरू करना।", author: "वॉल्ट डिज़्नी", category: "productivity" },
+  { text: "हमारे सारे सपने सच हो सकते हैं, यदि हमारे पास उन्हें पूरा करने का साहस हो।", author: "वॉल्ट डिज़्नी", category: "success" },
+  { text: "जितना अधिक आप खुद को पसंद करेंगे, उतना ही आप किसी और जैसे नहीं बनना चाहेंगे।", author: "वॉल्ट डिज़्नी", category: "mindset" },
+  { text: "घड़ी को मत देखते रहो; जो वह करती है वही करो—चलते रहो।", author: "सैम लेवेंसन", category: "persistence" },
+  { text: "अतीत से सीखो, वर्तमान में जियो, और आने वाले कल के लिए आशा रखो।", author: "अल्बर्ट आइंस्टीन", category: "mindset" },
+  { text: "मैंने सीखा है कि लोग भूल जाएंगे कि आपने क्या कहा, लोग भूल जाएंगे कि आपने क्या किया, लेकिन लोग कभी नहीं भूलेंगे कि आपने उन्हें कैसा महसूस कराया।", author: "माया एंजेलो", category: "mindset" },
+  { text: "हम कई हारों का सामना कर सकते हैं, लेकिन हमें हार नहीं माननी चाहिए।", author: "माया एंजेलो", category: "persistence" },
+  { text: "कुछ भी काम नहीं करेगा जब तक आप नहीं करेंगे।", author: "माया एंजेलो", category: "discipline" },
+  { text: "आप जो करते हैं उससे फर्क पड़ता है, और आपको तय करना है कि आप किस तरह का फर्क डालना चाहते हैं।", author: "जेन गुडॉल", category: "focus" },
+  { text: "अपने सपनों की दिशा में आत्मविश्वास से आगे बढ़ो। वह जीवन जियो जिसकी तुमने कल्पना की है।", author: "हेनरी डेविड थोरो", category: "success" },
+  { text: "सफलता आमतौर पर उन लोगों के पास आती है जो उसे पाने में बहुत व्यस्त होते हैं।", author: "हेनरी डेविड थोरो", category: "productivity" },
+  { text: "हजार मील की यात्रा भी एक कदम से शुरू होती है।", author: "लाओ त्ज़ु", category: "productivity" },
+  { text: "जब मैं जो हूँ उसे छोड़ देता हूँ, तब मैं वह बन जाता हूँ जो मैं बन सकता हूँ।", author: "लाओ त्ज़ु", category: "mindset" },
+  { text: "जो दूसरों को जानता है वह बुद्धिमान है; जो खुद को जानता है वह प्रबुद्ध है।", author: "लाओ त्ज़ु", category: "mindset" },
+  { text: "आपका जीवन संयोग से बेहतर नहीं होता, बदलाव से बेहतर होता है।", author: "जिम रोहन", category: "discipline" },
+  { text: "अनुशासन लक्ष्यों और उपलब्धि के बीच का पुल है।", author: "जिम रोहन", category: "discipline" },
+  { text: "या तो आप दिन को चलाइए, या दिन आपको चलाएगा।", author: "जिम रोहन", category: "productivity" },
+  { text: "प्रेरणा वह है जो आपको शुरू कराती है, आदत वह है जो आपको चलते रहने देती है।", author: "जिम रोहन", category: "discipline" },
+  { text: "कठिन परिश्रम प्रतिभा को हरा देता है, जब प्रतिभा कठिन परिश्रम नहीं करती।", author: "टिम नोटके", category: "discipline" },
+  { text: "मैं अपने करियर में बार-बार असफल हुआ हूँ, और यही कारण है कि मैं सफल हुआ।", author: "माइकल जॉर्डन", category: "persistence" },
+  { text: "कुछ लोग चाहते हैं कि यह हो जाए, कुछ लोग कामना करते हैं कि यह हो जाए, और कुछ लोग इसे कर दिखाते हैं।", author: "माइकल जॉर्डन", category: "focus" },
+  { text: "अगर आप कोशिश करना बंद नहीं करते, तो आप हारे नहीं हैं।", author: "अल्बर्ट हबर्ड", category: "persistence" },
+  { text: "भविष्य उन लोगों का है जो अपने सपनों की सुंदरता में विश्वास रखते हैं।", author: "एलेनोर रूज़वेल्ट", category: "success" },
+  { text: "वह करो जो तुम कर सकते हो, वहीं से जहाँ तुम हो, और उन्हीं साधनों से जो तुम्हारे पास हैं।", author: "थियोडोर रूज़वेल्ट", category: "productivity" },
+  { text: "यह मायने नहीं रखता कि आप कितनी धीरे चलते हैं, जब तक आप रुकते नहीं हैं।", author: "कन्फ्यूशियस", category: "persistence" },
+  { text: "महानता कभी न गिरने में नहीं, बल्कि हर बार गिरकर उठ जाने में है।", author: "कन्फ्यूशियस", category: "persistence" }
 ];
 
 // --- toast notification feature ---
@@ -198,8 +241,8 @@ function initClock() {
   const heroQuote = document.getElementById('hero-quote');
   
   if (heroQuote) {
-    const randomIndex = Math.floor(Math.random() * HERO_QUOTES.length);
-    heroQuote.textContent = HERO_QUOTES[randomIndex];
+    const randomIndex = Math.floor(Math.random() * MOTIVATIONAL_QUOTES.length);
+    heroQuote.innerHTML = MOTIVATIONAL_QUOTES[randomIndex].text + " —— " +  `<b>${MOTIVATIONAL_QUOTES[randomIndex].author}</b>`;
   }
   
   function updateTime() {
@@ -308,7 +351,7 @@ function showView(viewId) {
   
   const targetView = document.getElementById(viewId);
   if (targetView) {
-    targetView.style.display = ''; // Fallback to flex/grid stylesheet rules
+    targetView.style.display = '';
     targetView.classList.add('active');
   }
   
@@ -333,7 +376,7 @@ function showDashboard() {
 }
 
 function updateDashboardBadges() {
-  // 1. Todo active count
+  // Todo active count
   const todos = JSON.parse(localStorage.getItem(STORAGE_KEYS.TODOS)) || [];
   const activeTodos = todos.filter(t => !t.completed).length;
   const todoBadge = document.getElementById('todo-badge');
@@ -341,14 +384,14 @@ function updateDashboardBadges() {
   const todoDetailBadge = document.getElementById('todo-detail-badge');
   if (todoDetailBadge) todoDetailBadge.textContent = `${activeTodos} Active`;
   
-  // 2. Planner events count
+  // Planner events count
   const events = JSON.parse(localStorage.getItem(STORAGE_KEYS.PLANNER)) || [];
   const plannerBadge = document.getElementById('planner-badge');
   if (plannerBadge) plannerBadge.textContent = `${events.length} Events`;
   const plannerDetailBadge = document.getElementById('planner-detail-badge');
   if (plannerDetailBadge) plannerDetailBadge.textContent = `${events.length} Events`;
   
-  // 3. Goals completed fraction
+  // Goals completed fraction
   const goals = JSON.parse(localStorage.getItem(STORAGE_KEYS.GOALS)) || [];
   const completedGoals = goals.filter(g => g.completed).length;
   const goalsBadge = document.getElementById('goals-progress-badge');
@@ -377,7 +420,7 @@ function initSpaRouting() {
   updateDashboardBadges();
 }
 
-// --- MOTIVATION QUOTES WIDGET ---
+// --- Motivational quotes ---
 function initMotivationWidget() {
   const displayEl = document.getElementById('motivation-quote-display');
   const authorEl = document.getElementById('motivation-quote-author');
@@ -417,10 +460,6 @@ function initMotivationWidget() {
       if (icon) {
         icon.style.transform = 'rotate(360deg)';
         icon.style.transition = 'transform 0.5s ease';
-        setTimeout(() => {
-          icon.style.transform = 'none';
-          icon.style.transition = 'none';
-        }, 500);
       }
     });
   }
@@ -450,11 +489,7 @@ function initTodoWidget() {
   
   let currentFilter = 'all';
   
-  let todos = JSON.parse(localStorage.getItem(STORAGE_KEYS.TODOS)) || [
-    { id: 1, text: "Finish presentation outline", completed: false },
-    { id: 2, text: "Review team comments on dashboard", completed: true },
-    { id: 3, text: "Schedule dentist appointment", completed: false }
-  ];
+  let todos = JSON.parse(localStorage.getItem(STORAGE_KEYS.TODOS)) || [];
   
   function saveAndRender() {
     localStorage.setItem(STORAGE_KEYS.TODOS, JSON.stringify(todos));
@@ -531,13 +566,13 @@ function initTodoWidget() {
     
     filtered.forEach(todo => {
       const li = document.createElement('li');
-      li.className = 'todo-item-li';
+      li.className = 'todo-item-li ' + (todo.completed ? 'completed' : '');
       li.innerHTML = `
         <div class="todo-item-li-left">
           <label class="checkbox-container">
             <input type="checkbox" ${todo.completed ? 'checked' : ''} onchange="toggleTodo(${todo.id})">
             <span class="checkmark"></span>
-            <span class="goal-text">${todo.text}</span>
+            <span class="goal-text" >${todo.text}</span>
           </label>
         </div>
         <button class="todo-delete-btn" onclick="deleteTodo(${todo.id})" aria-label="Delete task">
