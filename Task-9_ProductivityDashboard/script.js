@@ -1,4 +1,4 @@
-// --- STATE MANAGEMENT (localStorage keys) ---
+// ---  localStorage keys ---
 const STORAGE_KEYS = {
   THEME: 'theme',
   TODOS: 'todos',
@@ -11,23 +11,23 @@ const STORAGE_KEYS = {
 const WEATHER_API_KEY = "2bd8398df0b447b79ac182453242308";
 const WEATHER_BASE_URL = "https://api.weatherapi.com/v1";
 
-// --- BACKGROUNDS & WEATHER STATES MAP ---
+// --- background images for day and night for different weather conditions ---
 const BACKGROUNDS = {
   day: {
-    sunny: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1920",
-    cloudy: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=1920",
-    mist: "https://images.unsplash.com/photo-1485236715568-ddc5ee6ca227?q=80&w=1920",
-    rainy: "https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?q=80&w=1920",
-    snow: "https://images.unsplash.com/photo-1511131341194-24e2eeeebb09?q=80&w=1920",
-    storm: "https://images.unsplash.com/photo-1605727216801-e27ce1d0cc28?q=80&w=1920",
+    sunny: "https://plus.unsplash.com/premium_photo-1661957387235-3bc814072fb3?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    cloudy: "https://images.unsplash.com/photo-1752563574621-2342cb20bd0b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    mist: "https://images.unsplash.com/photo-1482841628122-9080d44bb807?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    rainy: "https://plus.unsplash.com/premium_photo-1664910358669-b19dce4be056?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    snow: "https://images.unsplash.com/photo-1453306458620-5bbef13a5bca?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    storm: "https://images.unsplash.com/photo-1516490981167-dc990a242afe?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   night: {
-    sunny: "https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?q=80&w=1920",
-    cloudy: "https://images.unsplash.com/photo-1513628253939-010e64ac66cd?q=80&w=1920",
-    mist: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1920",
-    rainy: "https://images.unsplash.com/photo-1515694346937-94d85e41e6f0?q=80&w=1920",
-    snow: "https://images.unsplash.com/photo-1483664852095-d6cc6870702d?q=80&w=1920",
-    storm: "https://images.unsplash.com/photo-1500674425229-f692875b0ab7?q=80&w=1920",
+    sunny: "https://images.unsplash.com/photo-1728519454370-8f5341cd1a3f?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    cloudy: "https://images.unsplash.com/photo-1488226941561-6d7a806ae42a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    mist: "https://images.unsplash.com/photo-1503745328377-1f4355a2284b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    rainy: "https://images.unsplash.com/photo-1548206763-86dda956a599?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    snow: "https://plus.unsplash.com/premium_photo-1658506822827-fb0677fb8e1b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    storm: "https://images.unsplash.com/photo-1475116127127-e3ce09ee84e1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   }
 };
 
@@ -81,9 +81,7 @@ const WEATHER_CODE_MAP = {
   1282: { sky: "Moderate or Heavy Snow with Thunder", icon: "ri-thunderstorms-fill", color: "#f59e0b", bg: "storm" },
 };
 
-
-
-// --- MOTIVATIONAL QUOTES DATABASE ---
+// --- motivational quotes data ---
 const MOTIVATIONAL_QUOTES = [
   { text: "The secret of getting ahead is getting started.", author: "Mark Twain", category: "productivity" },
   { text: "It always seems impossible until it's done.", author: "Nelson Mandela", category: "persistence" },
@@ -105,7 +103,7 @@ const HERO_QUOTES = [
   "Focus on the process, not the outcome. Consistency builds momentum."
 ];
 
-// --- TOAST NOTIFICATIONS ---
+// --- toast notification feature ---
 function showToast(message, type = 'success') {
   const container = document.getElementById('toast-container');
   if (!container) return;
@@ -138,14 +136,14 @@ function getWeatherVisual(conditionCode) {
 
   return { sky: conditionText || "Clear", icon: "ri-sun-fill", color: "#facc15", bg: "sunny" };
 }
-// --- BACKGROUND & WEATHER CONTROL ---
+// --- background image change feature ---
 function updateBackgroundAndWeather(data) {
   if (!data?.current || !data?.location) return;
   const root = document.documentElement; 
   const currentTheme = root.getAttribute('data-theme') || 'dark'; 
-  let themeMode = currentTheme === 'light' ? 'day' : 'night';
 
-  // console.log(data)
+
+  console.log(data)
 
   
   
@@ -159,10 +157,14 @@ function updateBackgroundAndWeather(data) {
 
   const conditionCode = data.current.condition.code;
   const isDay = data.current.is_day === 1;
+  console.log(isDay)
+  let themeMode = currentTheme === 'light'  ? 'day' : 'night';
+  console.log(themeMode)
 
   const visual = getWeatherVisual(conditionCode);
-   themeMode = isDay ? "day" : "night";
-  const bgImage = BACKGROUNDS?.[themeMode]?.[visual.bg];
+   
+  const bgImage = BACKGROUNDS?.[themeMode || isDay]?.[visual.bg];
+  console.log(bgImage)
 
   if (bgEl && bgImage) {
     bgEl.style.backgroundImage = `url('${bgImage}')`;
@@ -182,11 +184,13 @@ function updateBackgroundAndWeather(data) {
   if (skyEl) skyEl.textContent = skyText;
   if (iconEl) iconEl.src = weatherIcon;
   if (location) location.textContent = locationName;
+  const navLocName = document.getElementById('nav-location-name');
+  if (navLocName) navLocName.textContent = locationName;
   if (humEl) humEl.textContent = "Humidity: " + humidity;
   if (windEl) windEl.textContent = "Wind: " + wind + "mph";
 }
 
-// --- CLOCK & DATE UPDATE ---
+// --- date and time ---
 function initClock() {
   const navClock = document.getElementById('nav-clock');
   const heroTime = document.getElementById('hero-time');
@@ -212,40 +216,6 @@ function initClock() {
   
   updateTime();
   setInterval(updateTime, 1000);
-}
-
-// --- THEME MANAGEMENT ---
-function initTheme() {
-  const themeToggle = document.getElementById('theme-toggle');
-  const root = document.documentElement;
-  
-  const savedTheme = localStorage.getItem(STORAGE_KEYS.THEME) || 'dark';
-  root.setAttribute('data-theme', savedTheme);
-  updateThemeIcon(savedTheme);
-  
-  if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = root.getAttribute('data-theme');
-      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-      
-      root.setAttribute('data-theme', newTheme);
-      localStorage.setItem(STORAGE_KEYS.THEME, newTheme);
-      updateThemeIcon(newTheme);
-      updateBackgroundAndWeather();
-      showToast(`Switched to ${newTheme} mode`, 'info');
-    });
-  }
-  
-  function updateThemeIcon(theme) {
-    if (!themeToggle) return;
-    const icon = themeToggle.querySelector('i');
-    if (!icon) return;
-    if (theme === 'light') {
-      icon.className = 'ri-moon-line';
-    } else {
-      icon.className = 'ri-sun-line';
-    }
-  }
 }
 
 function saveLocation(locationData) {
@@ -283,39 +253,46 @@ function getCurrentPosition() {
   });
 }
 
-// --- INTERACTIVE WEATHER CYCLER ---
+// --- Weather API Integration ---
 async function initWeather() {
   try {
     const savedLocation = getSavedLocation();
 
     if (savedLocation?.query) {
       const data = await fetchCurrentWeather(savedLocation.query);
-      updateBackgroundAndWeather(data)
+      updateBackgroundAndWeather(data);
       return;
     }
 
-
-    const position = await getCurrentPosition();
-    const { latitude, longitude } = position.coords;
-
-     const query = `${latitude},${longitude}`;
-    const data = await fetchCurrentWeather(query);
-
-    updateBackgroundAndWeather(data);
-
-    console.log(data)
-    saveLocation({
-      query: data.location.name,
-      name: data.location.name,
-      region: data.location.region,
-      country: data.location.country,
-    });
+    try {
+      const position = await getCurrentPosition();
+      console.log("Position", position);
+      const { latitude, longitude } = position.coords;
+      const query = `${latitude},${longitude}`;
+      const data = await fetchCurrentWeather(query);
+      updateBackgroundAndWeather(data);
+      saveLocation({
+        query: data.location.name,
+        name: data.location.name,
+        region: data.location.region,
+        country: data.location.country,
+      });
+    } catch (geoError) {
+      console.warn("Geolocation failed or denied, using fallback location.", geoError);
+      const fallbackQuery = "New Delhi";
+      const data = await fetchCurrentWeather(fallbackQuery);
+      updateBackgroundAndWeather(data);
+      saveLocation({
+        query: data.location.name,
+        name: data.location.name,
+        region: data.location.region,
+        country: data.location.country,
+      });
+    }
   } catch (error) {
     console.error(error);
     showToast("Unable to load weather.", "danger");
   }
-  
-  
 }
 
 // --- SPA VIEW ROUTING CONTROLLER ---
@@ -913,20 +890,164 @@ function initGoalsWidget() {
   renderGoals();
 }
 
+// --- Change location ---
+function initLocationSelector() {
+  const container = document.getElementById('nav-location-container');
+  const displayWrap = document.getElementById('nav-location-display');
+  const searchWrap = document.getElementById('nav-location-search-wrap');
+  const changeBtn = document.getElementById('nav-location-change-btn');
+  const closeBtn = document.getElementById('nav-location-close-btn');
+  const searchInput = document.getElementById('nav-location-input');
+  const suggestionsList = document.getElementById('location-suggestions-list');
 
+  if (!container || !displayWrap || !searchWrap || !changeBtn || !closeBtn || !searchInput || !suggestionsList) {
+    return;
+  }
 
+  // Toggle Search Input
+  changeBtn.addEventListener('click', () => {
+    displayWrap.style.display = 'none';
+    searchWrap.style.display = 'block';
+    searchInput.value = '';
+    searchInput.focus();
+    suggestionsList.innerHTML = '';
+    suggestionsList.style.display = 'none';
+  });
 
+  // Cancel / Close Search
+  function closeSearch() {
+    searchWrap.style.display = 'none';
+    displayWrap.style.display = 'flex';
+    searchInput.value = '';
+    suggestionsList.innerHTML = '';
+    suggestionsList.style.display = 'none';
+  }
 
+  closeBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeSearch();
+  });
 
+  // Debounce helper
+  function debounce(func, delay) {
+    let timeoutId;
+    return function (...args) {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => func.apply(this, args), delay);
+    };
+  }
 
+  // Fetch Suggestions from WeatherAPI Search/Autocomplete
+  async function fetchSuggestions(query) {
+    if (!query.trim()) {
+      suggestionsList.innerHTML = '';
+      suggestionsList.style.display = 'none';
+      return;
+    }
 
+    try {
+      const url = `${WEATHER_BASE_URL}/search.json?key=${WEATHER_API_KEY}&q=${encodeURIComponent(query)}`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error("Search suggestions failed");
+      const data = await res.json();
+      renderSuggestions(data);
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
+  // Render Suggestions list
+  function renderSuggestions(list) {
+    suggestionsList.innerHTML = '';
+    if (list.length === 0) {
+      suggestionsList.innerHTML = `<li class="no-results">No matches found</li>`;
+      suggestionsList.style.display = 'block';
+      return;
+    }
 
+    list.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <span class="suggestion-name">${item.name}</span>
+        <span class="suggestion-sub">${item.region ? item.region + ', ' : ''}${item.country}</span>
+      `;
+      li.addEventListener('click', async (e) => {
+        e.stopPropagation();
+        try {
+          const query = `${item.lat},${item.lon}`;
+          const weatherData = await fetchCurrentWeather(query);
+          updateBackgroundAndWeather(weatherData);
+          saveLocation({
+            query: weatherData.location.name,
+            name: weatherData.location.name,
+            region: weatherData.location.region,
+            country: weatherData.location.country,
+          });
+          showToast(`Location changed to ${weatherData.location.name}`);
+          closeSearch();
+        } catch (error) {
+          console.error(error);
+          showToast("Failed to fetch weather for selected location.", "danger");
+        }
+      });
+      suggestionsList.appendChild(li);
+    });
+
+    suggestionsList.style.display = 'block';
+  }
+
+  // Bind debounced keyup/input handler
+  searchInput.addEventListener('input', debounce((e) => {
+    fetchSuggestions(e.target.value);
+  }, 300));
+
+  // 6. Close suggestions list or search wrap when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!container.contains(e.target)) {
+      closeSearch();
+    }
+  });
+}
+
+// --- theme management ---
+function initTheme() {
+  const themeToggle = document.getElementById('theme-toggle');
+  const root = document.documentElement;
+  
+  const savedTheme = localStorage.getItem(STORAGE_KEYS.THEME) || 'dark';
+  root.setAttribute('data-theme', savedTheme);
+  updateThemeIcon(savedTheme);
+  
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = root.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      root.setAttribute('data-theme', newTheme);
+      localStorage.setItem(STORAGE_KEYS.THEME, newTheme);
+      updateThemeIcon(newTheme);
+      initWeather();
+      showToast(`Switched to ${newTheme} mode`, 'info');
+    });
+  }
+  
+  function updateThemeIcon(theme) {
+    if (!themeToggle) return;
+    const icon = themeToggle.querySelector('i');
+    if (!icon) return;
+    if (theme === 'light') {
+      icon.className = 'ri-moon-line';
+    } else {
+      icon.className = 'ri-sun-line';
+    }
+  }
+}
 
 // --- DOM CONTENT LOADED INITIALIZER ---
 document.addEventListener('DOMContentLoaded', () => {
   initClock();
   initTheme();
+  initLocationSelector();
   initWeather();
   updateBackgroundAndWeather();
   

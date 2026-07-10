@@ -23,6 +23,25 @@
                 <button class="back-btn" id="dashboard-back-btn" style="display: none;">
                     <i class="ri-arrow-left-line"></i> Dashboard
                 </button>
+                <div class="nav-location" id="nav-location-container">
+                    <div class="nav-location-display" id="nav-location-display">
+                        <i class="ri-map-pin-line location-pin-icon"></i>
+                        <span id="nav-location-name">Loading...</span>
+                        <button class="nav-location-change-btn" id="nav-location-change-btn" title="Change Location">
+                            <i class="ri-edit-line"></i> Change
+                        </button>
+                    </div>
+                    <div class="nav-location-search-wrap" id="nav-location-search-wrap" style="display: none;">
+                        <div class="nav-location-input-group">
+                            <i class="ri-search-line search-icon"></i>
+                            <input type="text" id="nav-location-input" placeholder="Search city..." autocomplete="off">
+                            <button class="nav-location-close-btn" id="nav-location-close-btn" title="Cancel">
+                                <i class="ri-close-line"></i>
+                            </button>
+                        </div>
+                        <ul class="location-suggestions-list" id="location-suggestions-list" style="display: none;"></ul>
+                    </div>
+                </div>
                 <div class="nav-clock" id="nav-clock">11:30:00 AM</div>
                 <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Theme">
                     <i class="ri-sun-line"></i>
