@@ -9,4 +9,6 @@
 | 5 | Task-5 Dribble | [Link](https://cohort3-0-assignments-37jh.vercel.app/)|
 | 6 | Task-6 TwoLeaves | [Link](https://cohort3-0-assignments-y8ah.vercel.app/)|
 | 7 | Task-7 TaskManager | [Link](https://cohort3-0-assignments-a597.vercel.app/)|
+| 8 | Task-8 FinTrackPro | [Link](https://cohort3-0-assignments-khxm.vercel.app/) |
+| 9 | Task-9 Productivity Dashboard | [Link](https://cohort3-0-assignments-bjhp.vercel.app/) |
 
