@@ -594,11 +594,7 @@ function initPlannerWidget() {
   const listContainer = document.getElementById('planner-timeline-list');
   const detailBadge = document.getElementById('planner-detail-badge');
   
-  let events = JSON.parse(localStorage.getItem(STORAGE_KEYS.PLANNER)) || [
-    { id: 1, time: "09:00", text: "Morning standup & coffee" },
-    { id: 2, time: "11:30", text: "Productivity project revision" },
-    { id: 3, time: "14:00", text: "Review designs with team" }
-  ];
+  let events = JSON.parse(localStorage.getItem(STORAGE_KEYS.PLANNER)) || [];
   
   function saveAndRender() {
     localStorage.setItem(STORAGE_KEYS.PLANNER, JSON.stringify(events));
@@ -697,6 +693,7 @@ function initPomodoroWidget() {
   const display = document.getElementById('pomodoro-time');
   const statusBadge = document.getElementById('pomodoro-status');
   const progressPath = document.getElementById('pomodoro-progress');
+  const circleWrapper = document.querySelector('.timer-circle-wrapper');
   
   const workInput = document.getElementById('work-duration-input');
   const breakInput = document.getElementById('break-duration-input');
@@ -728,6 +725,14 @@ function initPomodoroWidget() {
       const percent = timeLeft / activeTotal;
       progressPath.style.strokeDashoffset = circumference - (percent * circumference);
     }
+    
+    if (circleWrapper) {
+      if (!isWorkSession) {
+        circleWrapper.classList.add('break-active');
+      } else {
+        circleWrapper.classList.remove('break-active');
+      }
+    }
   }
   
   function applyInputs() {
@@ -752,23 +757,23 @@ function initPomodoroWidget() {
       updateDisplay();
       
       if (timeLeft <= 0) {
-        clearInterval(timer);
-        timer = null;
-        
         if (isWorkSession) {
           showToast('Time is up! Work session finished. Take a break!', 'success');
           isWorkSession = false;
           timeLeft = breakDuration;
           if (statusBadge) statusBadge.textContent = 'Break Session';
+          updateDisplay();
         } else {
           showToast('Break is over! Focus session started.', 'info');
           isWorkSession = true;
           timeLeft = focusDuration;
+          
+          clearInterval(timer);
+          timer = null;
+          resetControls();
+          updateDisplay();
           if (statusBadge) statusBadge.textContent = 'Focus Session';
         }
-        
-        resetControls();
-        updateDisplay();
       }
     }, 1000);
     
@@ -827,11 +832,7 @@ function initGoalsWidget() {
   const goalInput = document.getElementById('goal-input-field');
   const addGoalBtn = document.getElementById('add-goal-btn');
   
-  let goals = JSON.parse(localStorage.getItem(STORAGE_KEYS.GOALS)) || [
-    { id: 'goal-1', text: "Project X Proposal", completed: false },
-    { id: 'goal-2', text: "Client Workshop Prep", completed: false },
-    { id: 'goal-3', text: "Review code submissions", completed: true }
-  ];
+  let goals = JSON.parse(localStorage.getItem(STORAGE_KEYS.GOALS)) || [];
   
   function updateProgress() {
     if (goals.length === 0) {
@@ -859,6 +860,8 @@ function initGoalsWidget() {
       return g;
     });
     saveGoals();
+    renderGoals();
+    
   };
   
   window.deleteGoal = function(id) {
@@ -905,7 +908,7 @@ function initGoalsWidget() {
     
     goals.forEach(goal => {
       const item = document.createElement('div');
-      item.className = 'todo-item-li';
+      item.className = "todo-item-li " + (goal.completed ? 'completed' : '');
       item.innerHTML = `
         <div class="todo-item-li-left">
           <label class="checkbox-container">
@@ -1078,7 +1081,7 @@ function initTheme() {
   }
 }
 
-// --- DOM CONTENT LOADED INITIALIZER ---
+// --- Initializer ---
 document.addEventListener('DOMContentLoaded', () => {
   initClock();
   initTheme();
@@ -1086,7 +1089,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initWeather();
   updateBackgroundAndWeather();
   
-  // Initialize routers
+  // Initialize routers for single page application
   initSpaRouting();
   
   // Widget initializations
