@@ -14,7 +14,6 @@ const Home = () => {
 
 
   const userName = loggedInUser?.name || "Guest";
-  console.log(products)
 
   useEffect(() => {
     const fetchHomeProducts = async () => {
